@@ -1,13 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600&display=swap');
-
-@font-face {
-  font-family: 'Champion-Light';
-  src: url('/fonts/Champion-Light.woff2') format('woff2'),
-       url('/fonts/Champion-Light.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:wght@300;400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -15,46 +6,10 @@
 
 @layer base {
   html {
-    font-family: 'Figtree', sans-serif;
-    scroll-behavior: smooth;
-    color: #ffffff;
+    font-family: 'Inter', sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Champion-Light', serif;
-    color: #ffffff;
-  }
-}
-
-@layer utilities {
-  .animate-fade-in {
-    animation: fadeIn 1s ease-in forwards;
-  }
-
-  .animate-scroll {
-    animation: scroll 2s ease-in-out infinite;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(8px);
-  }
-  100% {
-    transform: translateY(0);
+    font-family: 'Merriweather', serif;
   }
 }

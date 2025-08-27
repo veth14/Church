@@ -123,9 +123,9 @@ const Services = () => {
   ];
 
   return (
-    <div className="relative min-h-screen">
+    <div id="services" className="relative min-h-screen">
       {/* Hero Section with Title */}
-            <section className="relative h-[60vh] flex items-center justify-center">
+      <section className="relative h-[60vh] flex items-center justify-center">
         <div className="absolute inset-0 w-full h-full">
           <img
             src="/Pictures/MainHall.jpg"
@@ -133,33 +133,42 @@ const Services = () => {
             className="object-cover w-full h-full"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-500/10 to-transparent"></div>
         </div>
         <div className="relative z-10 text-center">
-          <h1 className="mb-6 font-bold text-white text-7xl">
-            Join Our Services
+          <span className="inline-block mb-4 text-sm font-medium tracking-[0.2em] text-yellow-400 uppercase">Worship With Us</span>
+          <h1 className="relative inline-block">
+            <span className="relative px-8 py-2 font-bold text-white text-7xl">
+              <span className="relative z-10">Join Our Services</span>
+              <span className="absolute inset-0 w-full h-full transform -skew-x-12 rounded-lg bg-gradient-to-r from-yellow-600/20 to-yellow-500/20"></span>
+              <span className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-600 to-yellow-400"></span>
+            </span>
           </h1>
-          <p className="max-w-3xl px-4 mx-auto text-2xl text-gray-300">
+          <p className="max-w-3xl px-4 mx-auto mt-8 text-2xl text-gray-300">
             Experience the presence of God through our various services and prayer gatherings
           </p>
         </div>
       </section>
 
       {/* Sunday Services Title */}
-      <div className="relative py-24 overflow-hidden text-center">
+      <div className="relative py-32 overflow-hidden text-center">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/95 to-black"></div>
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary-500/10 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-500/5 to-transparent"></div>
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-yellow-500/30 to-transparent"></div>
+        
         <div className="relative z-10">
-          <div className="inline-block mb-8">
+          <div className="inline-block mb-12">
+            <span className="inline-block mb-4 text-sm font-medium tracking-[0.2em] text-yellow-400 uppercase">Every Sunday</span>
             <h2 className="relative text-5xl font-bold">
               <span className="relative px-8 py-2 text-white">
                 <span className="relative z-10">Sunday Services</span>
-                <span className="absolute inset-0 w-full h-full transform -skew-x-12 rounded-lg bg-gradient-to-r from-primary-600/20 to-primary-500/20"></span>
-                <span className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-600 to-primary-400"></span>
+                <span className="absolute inset-0 w-full h-full transform -skew-x-12 rounded-lg bg-gradient-to-r from-yellow-600/20 to-yellow-500/20"></span>
+                <span className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-600 to-yellow-400"></span>
               </span>
             </h2>
           </div>
-          <p className="max-w-3xl px-4 mx-auto text-xl font-medium text-gray-200">
+          <p className="max-w-3xl px-4 mx-auto text-xl font-medium text-gray-300">
             Join us every Sunday for powerful worship and life-changing messages
           </p>
         </div>
@@ -186,19 +195,55 @@ const Services = () => {
           <div className="relative z-10 px-6 py-24 mx-auto max-w-7xl">
             <div className="transition-all duration-1000 ease-out translate-y-8 opacity-0 content-wrapper">
               <div className="relative max-w-3xl mx-auto text-center">
-                <h3 className="mb-8 text-6xl font-bold tracking-tight text-white">
-                  {service.title}
-                </h3>
-                <div className="space-y-8">
-                  <div className="flex items-center justify-center">
-                    <svg className="w-6 h-6 mr-3 text-primary-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {/* Service Title with Highlight */}
+                <div className="mb-12 group">
+                  <span className="inline-block mb-4 text-sm font-medium tracking-[0.2em] text-yellow-400/80 uppercase">Welcome To</span>
+                  <h3 className="relative inline-block">
+                    <span className="relative z-10 text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/70">
+                      {service.title}
+                    </span>
+                    <span className="absolute inset-0 z-0 text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 via-yellow-400 to-yellow-300 blur-sm opacity-70 animate-pulse">
+                      {service.title}
+                    </span>
+                  </h3>
+                  <div className="w-32 h-0.5 mx-auto mt-6 bg-gradient-to-r from-transparent via-yellow-400/50 to-transparent"></div>
+                </div>
+
+                {/* Time Display */}
+                <div className="relative group">
+                  <div className="relative inline-flex items-center px-8 py-4 mb-8 space-x-4 text-xl font-medium tracking-wide transition-all duration-500 border rounded-xl border-white/10 bg-white/5 text-yellow-300/90 backdrop-blur-md hover:border-yellow-400/30 hover:bg-white/10">
+                    <div className="absolute inset-0 transition-all duration-500 rounded-xl bg-gradient-to-r from-yellow-400/0 via-yellow-400/5 to-yellow-400/0 group-hover:via-yellow-400/10"></div>
+                    <svg className="w-6 h-6 transition-transform duration-500 group-hover:scale-110 group-hover:text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    <span className="text-xl font-medium text-primary-300">{service.time}</span>
+                    <span className="relative z-10">{service.time}</span>
+                    <div className="absolute inset-x-0 h-px transition-opacity duration-500 opacity-0 -bottom-px bg-gradient-to-r from-transparent via-yellow-400/50 to-transparent group-hover:opacity-100"></div>
                   </div>
-                  <p className="max-w-2xl mx-auto text-xl leading-relaxed text-gray-300">
+                </div>
+
+                {/* Description */}
+                <div className="relative group">
+                  <p className="max-w-2xl mx-auto text-xl leading-relaxed tracking-wide transition-colors duration-300 text-white/80 group-hover:text-white/90">
                     {service.description}
                   </p>
+                  <div className="absolute inset-x-0 bottom-0 h-px transition-opacity duration-500 opacity-0 bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:opacity-100"></div>
+                </div>
+
+                {/* Join Button */}
+                <div className="mt-12 perspective-1000">
+                  <a 
+                    href="#contact" 
+                    className="relative inline-flex items-center px-8 py-4 overflow-hidden text-lg font-medium rounded-xl group/button"
+                  >
+                    <span className="relative z-10 text-black transition-colors duration-500 group-hover/button:text-white">
+                      Join This Service
+                      <svg className="inline-block w-5 h-5 ml-2 -mr-1 transition-transform duration-500 group-hover/button:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                      </svg>
+                    </span>
+                    <div className="absolute inset-0 transition-transform duration-500 bg-gradient-to-r from-yellow-400 to-yellow-500 group-hover/button:scale-105"></div>
+                    <div className="absolute inset-0 transition-all duration-500 bg-gradient-to-r from-white to-yellow-300 group-hover/button:-translate-y-full"></div>
+                  </a>
                 </div>
               </div>
             </div>
@@ -207,21 +252,24 @@ const Services = () => {
       ))}
 
       {/* Prayer Gatherings Title */}
-      <div className="relative py-24 overflow-hidden text-center">
+      <div className="relative py-32 overflow-hidden text-center">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/95 to-black"></div>
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary-500/10 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-500/5 to-transparent"></div>
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-blue-500/30 to-transparent"></div>
+        
         <div className="relative z-10">
-          <div className="inline-block mb-8">
+          <div className="inline-block mb-12">
+            <span className="inline-block mb-4 text-sm font-medium tracking-[0.2em] text-blue-400 uppercase">Come Together In Prayer</span>
             <h2 className="relative text-5xl font-bold">
               <span className="relative px-8 py-2 text-white">
                 <span className="relative z-10">Prayer Gatherings</span>
-                <span className="absolute inset-0 w-full h-full transform -skew-x-12 rounded-lg bg-gradient-to-r from-primary-600/20 to-primary-500/20"></span>
-                <span className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-600 to-primary-400"></span>
+                <span className="absolute inset-0 w-full h-full transform -skew-x-12 rounded-lg bg-gradient-to-r from-blue-600/20 to-blue-500/20"></span>
+                <span className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-blue-400"></span>
               </span>
             </h2>
           </div>
-          <p className="max-w-3xl px-4 mx-auto text-xl font-medium text-gray-200">
+          <p className="max-w-3xl px-4 mx-auto text-xl font-medium text-gray-300">
             Join our community in powerful prayer meetings throughout the week
           </p>
         </div>
@@ -248,54 +296,88 @@ const Services = () => {
           <div className="relative z-10 px-6 py-24 mx-auto max-w-7xl">
             <div className="transition-all duration-1000 ease-out translate-y-8 opacity-0 content-wrapper">
               <div className="relative max-w-3xl mx-auto text-center">
-                <h3 className="mb-8 text-6xl font-bold tracking-tight text-white">
-                  {gathering.title}
-                </h3>
+                {/* Prayer Title with Highlight */}
+                <div className="mb-12 group">
+                  <span className="inline-block mb-4 text-sm font-medium tracking-[0.2em] text-blue-400/80 uppercase">Join Us In Prayer</span>
+                  <h3 className="relative inline-block">
+                    <span className="relative z-10 text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/70">
+                      {gathering.title}
+                    </span>
+                    <span className="absolute inset-0 z-0 text-6xl font-bold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-300 via-blue-400 to-blue-300 blur-sm opacity-70 animate-pulse">
+                      {gathering.title}
+                    </span>
+                  </h3>
+                  <div className="w-32 h-0.5 mx-auto mt-6 bg-gradient-to-r from-transparent via-blue-400/50 to-transparent"></div>
+                </div>
+
+                {/* Meeting Type Badge */}
                 <div className="mb-8">
-                  <span className={`inline-flex items-center px-5 py-2 text-sm font-medium rounded-full ${
+                  <span className={`inline-flex items-center px-6 py-3 text-sm font-medium rounded-xl backdrop-blur-md transition-all duration-500 ${
                     gathering.isOnsite 
-                      ? 'bg-emerald-950/30 text-emerald-300 border border-emerald-700/30'
-                      : 'bg-blue-950/30 text-blue-300 border border-blue-700/30'
+                      ? 'bg-emerald-500/5 text-emerald-300 border border-emerald-500/20 hover:bg-emerald-500/10 hover:border-emerald-500/30'
+                      : 'bg-blue-500/5 text-blue-300 border border-blue-500/20 hover:bg-blue-500/10 hover:border-blue-500/30'
                   }`}>
-                    <span className={`mr-2 w-1.5 h-1.5 rounded-full ${
+                    <span className={`mr-2 w-2 h-2 rounded-full animate-pulse ${
                       gathering.isOnsite ? 'bg-emerald-400' : 'bg-blue-400'
                     }`}></span>
-                    {gathering.isOnsite ? 'Onsite' : 'Online'}
+                    {gathering.isOnsite ? 'Onsite Meeting' : 'Online Meeting'}
                   </span>
                 </div>
-                <div className="space-y-8">
-                  <div className="flex items-center justify-center">
-                    <svg className="w-6 h-6 mr-3 text-primary-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                {/* Time Display */}
+                <div className="relative group">
+                  <div className="relative inline-flex items-center px-8 py-4 mb-8 space-x-4 text-xl font-medium tracking-wide transition-all duration-500 border rounded-xl border-white/10 bg-white/5 text-blue-300/90 backdrop-blur-md hover:border-blue-400/30 hover:bg-white/10">
+                    <div className="absolute inset-0 transition-all duration-500 rounded-xl bg-gradient-to-r from-blue-400/0 via-blue-400/5 to-blue-400/0 group-hover:via-blue-400/10"></div>
+                    <svg className="w-6 h-6 transition-transform duration-500 group-hover:scale-110 group-hover:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    <span className="text-xl font-medium text-primary-300">{gathering.time}</span>
+                    <span className="relative z-10">{gathering.time}</span>
+                    <div className="absolute inset-x-0 h-px transition-opacity duration-500 opacity-0 -bottom-px bg-gradient-to-r from-transparent via-blue-400/50 to-transparent group-hover:opacity-100"></div>
                   </div>
-                  <p className="max-w-2xl mx-auto text-xl leading-relaxed text-gray-300">
+                </div>
+
+                {/* Description */}
+                <div className="relative group">
+                  <p className="max-w-2xl mx-auto text-xl leading-relaxed tracking-wide transition-colors duration-300 text-white/80 group-hover:text-white/90">
                     {gathering.description}
                   </p>
-                  {gathering.location && (
-                    <div className="flex items-center justify-center gap-3">
-                      <svg className="w-6 h-6 text-primary-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <div className="absolute inset-x-0 bottom-0 h-px transition-opacity duration-500 opacity-0 bg-gradient-to-r from-transparent via-white/10 to-transparent group-hover:opacity-100"></div>
+                </div>
+
+                {/* Location */}
+                {gathering.location && (
+                  <div className="mt-8 group">
+                    <div className="relative inline-flex items-center px-6 py-3 space-x-3 transition-all duration-500 border rounded-xl border-white/10 bg-white/5 text-white/80 backdrop-blur-md group-hover:border-blue-400/30 group-hover:bg-white/10">
+                      <svg className="w-5 h-5 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
-                      <span className="text-xl text-gray-300">{gathering.location}</span>
+                      <span className="text-lg">{gathering.location}</span>
+                      <div className="absolute inset-x-0 h-px transition-opacity duration-500 opacity-0 -bottom-px bg-gradient-to-r from-transparent via-blue-400/50 to-transparent group-hover:opacity-100"></div>
                     </div>
-                  )}
-                  {gathering.link && (
+                  </div>
+                )}
+
+                {/* Join Link */}
+                {gathering.link && (
+                  <div className="mt-12 perspective-1000">
                     <a
                       href={gathering.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center px-6 py-3 text-sm font-medium text-white transition-all duration-300 ease-out rounded-lg bg-primary-600 hover:bg-primary-500"
+                      className="relative inline-flex items-center px-8 py-4 overflow-hidden text-lg font-medium rounded-xl group/button"
                     >
-                      Join via {gathering.platform}
-                      <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
+                      <span className="relative z-10 text-black transition-colors duration-500 group-hover/button:text-white">
+                        Join via {gathering.platform}
+                        <svg className="inline-block w-5 h-5 ml-2 -mr-1 transition-transform duration-500 group-hover/button:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                      </span>
+                      <div className="absolute inset-0 transition-transform duration-500 bg-gradient-to-r from-blue-400 to-blue-500 group-hover/button:scale-105"></div>
+                      <div className="absolute inset-0 transition-all duration-500 bg-gradient-to-r from-white to-blue-300 group-hover/button:-translate-y-full"></div>
                     </a>
-                  )}
-                </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -379,26 +461,28 @@ const Services = () => {
       </section>
 
       {/* Campuses Section */}
-      <div className="relative py-24 overflow-hidden text-center">
+      <div className="relative py-32 overflow-hidden text-center">
         <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900/95 to-black"></div>
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:60px_60px]"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary-500/10 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-500/5 to-transparent"></div>
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-yellow-500/30 to-transparent"></div>
         
         {/* Content Container */}
         <div className="relative z-10">
           {/* Section Header */}
           <div className="inline-block mb-12">
-            <h2 className="relative text-6xl font-black">
+            <span className="inline-block mb-4 text-sm font-medium tracking-[0.2em] text-yellow-400 uppercase">Our Ministry Locations</span>
+            <h2 className="relative text-5xl font-bold">
               <span className="relative px-8 py-2 text-white">
-                <span className="relative z-10">Our Campuses</span>
-                <span className="absolute inset-0 w-full h-full transform -skew-x-12 rounded-lg bg-gradient-to-r from-primary-600/20 to-primary-500/20"></span>
-                <span className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-600 to-primary-400"></span>
+                <span className="relative z-10">Campus Ministry</span>
+                <span className="absolute inset-0 w-full h-full transform -skew-x-12 rounded-lg bg-gradient-to-r from-yellow-600/20 to-yellow-500/20"></span>
+                <span className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-yellow-600 to-yellow-400"></span>
               </span>
             </h2>
           </div>
           
           {/* Section Description */}
-          <p className="max-w-3xl px-4 mx-auto mb-20 text-xl font-medium text-gray-200">
+          <p className="max-w-3xl px-4 mx-auto mb-20 text-xl font-medium text-gray-300">
             Experience worship across our multiple locations throughout the city
           </p>
 
@@ -407,30 +491,23 @@ const Services = () => {
             <Slider
               dots={true}
               infinite={true}
-              speed={700}
+              speed={800}
               slidesToShow={3}
               slidesToScroll={1}
               autoplay={true}
-              autoplaySpeed={5000}
+              autoplaySpeed={6000}
               pauseOnHover={true}
               centerMode={true}
               centerPadding="0"
               dotsClass="slick-dots"
               appendDots={dots => (
-                <div style={{ padding: "40px 0" }}>
-                  <ul style={{ 
-                    display: 'flex',
-                    justifyContent: 'center',
-                    gap: '8px',
-                    listStyle: 'none',
-                    margin: 0,
-                    padding: 0
-                  }}> 
-                    {dots.map((dot, i) => (
-                      <li key={i} style={{ margin: 0 }}>
-                        <div className="w-3 h-3 mx-1 transition-all duration-300 rounded-full bg-white/40 hover:bg-white/60">
+                <div className="pt-12 pb-4">
+                  <ul className="flex items-center justify-center gap-2">
+                    {Array.isArray(dots) && dots.map((dot, i) => (
+                      <li key={i} className="m-0">
+                        <button className="w-2 h-2 mx-1 transition-all duration-300 rounded-full bg-white/30 hover:bg-yellow-400">
                           {dot}
-                        </div>
+                        </button>
                       </li>
                     ))}
                   </ul>
@@ -456,10 +533,10 @@ const Services = () => {
             >
               {campuses.map((campus, index) => (
                 <div key={index} className="p-4 pb-16">
-                  <div className="group relative overflow-hidden rounded-xl bg-gradient-to-b from-gray-900/90 to-black border border-gray-800/50 backdrop-blur-sm transition-all duration-500 hover:border-primary-500/50 hover:shadow-2xl hover:shadow-primary-500/20 h-[600px] transform hover:scale-110 hover:-translate-y-4 hover:z-10">
+                  <div className="group relative overflow-hidden rounded-xl bg-gradient-to-b from-gray-900/90 to-black border border-gray-800/50 backdrop-blur-sm transition-all duration-500 hover:border-yellow-500/30 h-[600px] transform hover:-translate-y-1">
                     {/* Background glow effect */}
                     <div className="absolute inset-0 transition-opacity duration-500 opacity-0 group-hover:opacity-100">
-                      <div className="absolute inset-0 scale-110 bg-primary-500/20 blur-2xl"></div>
+                      <div className="absolute inset-0 scale-110 bg-gradient-to-t from-yellow-500/10 to-transparent blur-xl"></div>
                     </div>
 
                     {/* Image Container */}
@@ -467,56 +544,55 @@ const Services = () => {
                       <img
                         src={campus.image}
                         alt={campus.name}
-                        className="object-cover w-full h-full transition-all duration-700 filter grayscale group-hover:grayscale-0 group-hover:scale-105 group-hover:brightness-110"
+                        className="object-cover w-full h-full transition-all duration-700"
                       />
-                      {/* Single subtle gradient for text protection */}
-                      <div className="absolute inset-0 transition-all duration-700 bg-gradient-to-t from-black via-black/20 to-transparent group-hover:opacity-30"></div>
+                      <div className="absolute inset-0 transition-opacity duration-700 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
                     </div>
 
                     {/* Content Container */}
                     <div className="relative p-8 flex flex-col h-[calc(600px-16rem)]">
                       {/* Campus Status Badge */}
                       <div className="absolute z-10 transform -translate-x-1/2 -top-4 left-1/2">
-                        <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-primary-500/30 border border-primary-400/50 text-primary-200 text-sm font-medium shadow-lg backdrop-blur-sm">
+                        <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-yellow-400/10 border border-yellow-400/30 text-yellow-300 text-sm font-medium backdrop-blur-sm">
                           Active Campus
                         </span>
                       </div>
-                      {/* Extra shadow protection for badge */}
-                      <div className="absolute left-0 right-0 h-16 -top-8 bg-gradient-to-b from-gray-900 to-transparent"></div>
 
                       {/* Campus Name */}
                       <div className="mt-2 mb-6 min-h-[4rem] flex items-center justify-center">
-                        <h3 className="text-2xl font-bold tracking-tight text-white line-clamp-2">
+                        <h3 className="text-2xl font-bold tracking-tight text-white transition-colors duration-300 group-hover:text-yellow-400">
                           {campus.name}
                         </h3>
                       </div>
 
                       {/* Campus Details */}
-                      <div className="flex-grow space-y-4 text-gray-300">
-                        <div className="flex items-center justify-center">
-                          <svg className="flex-shrink-0 w-5 h-5 mr-3 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <div className="flex-grow space-y-4">
+                        <div className="flex items-center justify-center gap-3">
+                          <svg className="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                           </svg>
-                          <span className="text-lg truncate">{campus.location}</span>
+                          <span className="text-lg text-white/90">{campus.location}</span>
                         </div>
-                        <div className="flex items-center justify-center">
-                          <svg className="flex-shrink-0 w-5 h-5 mr-3 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        
+                        <div className="flex items-center justify-center gap-3">
+                          <svg className="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                           </svg>
-                          <span className="text-lg truncate">{campus.service}</span>
+                          <span className="text-lg text-white/90">{campus.service}</span>
                         </div>
-                        <div className="flex items-center justify-center">
-                          <svg className="flex-shrink-0 w-5 h-5 mr-3 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+                        <div className="flex items-center justify-center gap-3">
+                          <svg className="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                           </svg>
-                          <span className="text-lg truncate">{campus.leader}</span>
+                          <span className="text-lg text-white/90">{campus.leader}</span>
                         </div>
                       </div>
 
                       {/* Visit Button */}
                       <div className="pt-8">
-                        <button className="w-full px-6 py-3 text-sm font-semibold text-white transition-all duration-300 border rounded-lg bg-primary-600/20 border-primary-500/30 hover:bg-primary-600/30 hover:border-primary-500/50">
+                        <button className="w-full px-6 py-3 text-lg font-medium text-center text-black transition-all duration-300 bg-yellow-400 rounded-lg hover:bg-yellow-300">
                           Visit Campus
                         </button>
                       </div>

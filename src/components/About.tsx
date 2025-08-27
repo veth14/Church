@@ -1,21 +1,23 @@
+import React from 'react'
+
 const About = () => {
   return (
-    <section id="about" className="py-16 bg-gradient-to-b from-primary-50 to-primary-100">
+    <section id="about" className="py-16 bg-gray-50">
       <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
         <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold md:text-4xl text-primary-900">About Our Church</h2>
-          <p className="max-w-3xl mx-auto text-lg text-primary-700">
-            Light of the World - North Caloocan is a beacon of hope and faith in our community, 
-            dedicated to spreading God's love and serving as a guiding light to others.
+          <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">About Our Church</h2>
+          <p className="max-w-3xl mx-auto text-lg text-gray-600">
+            For over 35 years, Light of the World - North Caloocan has been a beacon of hope and faith in our community, 
+            dedicated to spreading God's love and serving others.
           </p>
         </div>
 
         <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
           <div>
-            <h3 className="mb-6 text-2xl font-bold text-primary-800">Our Mission</h3>
-            <p className="mb-6 text-primary-700">
+            <h3 className="mb-6 text-2xl font-bold text-gray-900">Our Mission</h3>
+            <p className="mb-6 text-gray-600">
               We are committed to creating a welcoming environment where people can encounter God, 
-              grow in their faith, and discover their purpose. Our mission is to shine God's light and love, 
+              grow in their faith, and discover their purpose. Our mission is to love God, love people, 
               and serve our community with the heart of Christ.
             </p>
             
