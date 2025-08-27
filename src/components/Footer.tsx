@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <div className="pt-8 mt-8 text-center text-gray-300 border-t border-gray-700">
-          <p>&copy; {new Date().getFullYear()} Church Name. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Light of the World - North Caloocan. All rights reserved.</p>
         </div>
       </div>
     </footer>
