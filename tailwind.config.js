@@ -7,8 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        serif: ['Merriweather', 'serif'],
+        'sans': ['Figtree', 'ui-sans-serif', 'system-ui'],
+        'serif': ['Champion-Light', 'ui-serif', 'Georgia'],
       },
       animation: {
         'fade-in': 'fadeIn 1s ease-in forwards',
@@ -46,25 +46,17 @@ export default {
           DEFAULT: '#1F2937', // Black
           light: '#374151',   // Light Black
           dark: '#111827',    // Darker Black
-        },
-        accent: {
-          50: '#fef2f2',  // Light Red
-          100: '#fee2e2', // Lighter Red
-          200: '#fecaca', // Light Warm
-          300: '#fca5a5', // Warm
-          400: '#f87171', // Primary Warm
-          500: '#ef4444', // Deep Warm
-          600: '#dc2626', // Darker Warm
-          700: '#b91c1c', // Dark Warm
-          800: '#991b1b', // Very Dark Warm
-          900: '#7f1d1d', // Darkest Warm
-        },
-          900: '#713f12',
+          50: '#fef2f2',      // Light Red
+          100: '#fee2e2',     // Lighter Red
+          200: '#fecaca',     // Light Warm
+          300: '#fca5a5',     // Warm
+          400: '#f87171',     // Primary Warm
+          500: '#ef4444',     // Deep Warm
+          600: '#dc2626',     // Darker Warm
+          700: '#b91c1c',     // Dark Warm
+          800: '#991b1b',     // Very Dark Warm
+          900: '#7f1d1d',     // Darkest Warm
         }
-      },
-      fontFamily: {
-        'sans': ['Inter', 'ui-sans-serif', 'system-ui'],
-        'serif': ['Merriweather', 'ui-serif', 'Georgia'],
       }
     },
   },

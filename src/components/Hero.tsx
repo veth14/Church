@@ -15,8 +15,7 @@ const Hero: React.FC = () => {
   return (
     <section id="home" className="relative h-screen overflow-hidden">
       {/* Video Background */}
-      <div className="absolute inset-0 w-full h-full">
-        <div className="absolute inset-0 z-10 bg-black opacity-40" />
+      <div className="absolute inset-0 z-0 w-full h-full">
         <video
           className="absolute inset-0 object-cover w-full h-full"
           autoPlay
@@ -30,10 +29,11 @@ const Hero: React.FC = () => {
           <source src="/Videos/LandingPageVideo.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+        <div className="absolute inset-0 bg-black opacity-40" />
       </div>
 
       {/* Content */}
-      <div className="relative flex items-center justify-center h-full">
+      <div className="relative z-10 flex items-center justify-center h-full">
         <div 
           className="max-w-4xl px-4 mx-auto text-center sm:px-6 lg:px-8"
           style={{
@@ -60,34 +60,35 @@ const Hero: React.FC = () => {
             <p className="font-['Figtree'] text-base md:text-lg mt-12 text-white/70 max-w-2xl mx-auto font-light">
               Where faith illuminates hearts and transforms lives.
             </p>
-            <div className="flex items-center justify-center gap-8 mt-12">
+            <div className="relative z-50 flex flex-col items-center justify-center gap-4 mt-12 sm:flex-row sm:gap-8">
               <a
                 href="#services"
-                className="relative px-8 py-3 overflow-hidden text-sm group"
+                className="w-full sm:w-auto bg-[#FBD719] hover:bg-[#FBD719]/90 text-black px-8 py-3 rounded-lg font-['Figtree'] font-medium text-center"
               >
-                <span className="relative z-10 font-['Figtree'] text-black font-medium">
-                  Join Us This Sunday
-                </span>
-                <div className="absolute inset-0 bg-[#FBD719] transform transition-transform duration-300 group-hover:scale-x-110"></div>
+                Join Us This Sunday
               </a>
               <a
                 href="#about"
-                className="relative px-8 py-3 overflow-hidden text-sm group"
+                className="w-full sm:w-auto bg-white/10 hover:bg-white/20 text-white px-8 py-3 rounded-lg font-['Figtree'] font-medium flex items-center justify-center gap-2"
               >
-                <span className="relative z-10 font-['Figtree'] text-white font-medium">
-                  Learn More
-                </span>
-                <div className="absolute inset-0 border border-[#FBD719] opacity-50 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="absolute inset-0 bg-[#FBD719] transform origin-left transition-transform duration-300 scale-x-0 group-hover:scale-x-100"></div>
+                Learn More
+                <svg 
+                  className="w-4 h-4" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
               </a>
             </div>
           </div>
-
-          {/* Scroll Indicator */}
-          <div className="absolute flex flex-col items-center transform -translate-x-1/2 bottom-8 left-1/2 animate-bounce">
-            <div className="w-[1px] h-8 bg-gradient-to-b from-[#FBD719] to-transparent"></div>
-          </div>
         </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute flex flex-col items-center transform -translate-x-1/2 bottom-8 left-1/2 animate-bounce">
+        <div className="w-[1px] h-8 bg-gradient-to-b from-[#FBD719] to-transparent"></div>
       </div>
     </section>
   );
