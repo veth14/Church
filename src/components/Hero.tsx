@@ -58,7 +58,7 @@ const Hero: React.FC = () => {
               </span>
             </h1>
             <p className="font-['Figtree'] text-base md:text-lg mt-12 text-white/70 max-w-2xl mx-auto font-light">
-              Where faith illuminates hearts and transforms lives.
+              Winning souls for Christ, making disciples who will live and share His Word.
             </p>
             <div className="relative z-50 flex flex-col items-center justify-center gap-4 mt-12 sm:flex-row sm:gap-8">
               <a

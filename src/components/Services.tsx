@@ -1,96 +1,228 @@
+import { useEffect } from 'react';
+
 const Services = () => {
-  const services = [
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const section = entry.target.querySelector('.content-wrapper');
+        if (entry.isIntersecting) {
+          section?.classList.remove('opacity-0', 'translate-y-8');
+          section?.classList.add('opacity-100', 'translate-y-0');
+        }
+      });
+    }, observerOptions);
+
+    const sections = document.querySelectorAll('.service-section');
+    sections.forEach(section => observer.observe(section));
+
+    return () => sections.forEach(section => observer.unobserve(section));
+  }, []);
+
+  const sundayServices = [
     {
-      title: "Sunday Worship",
-      time: "9:00 AM & 11:00 AM",
-      description: "Join us for inspiring worship, biblical teaching, and fellowship with our church family.",
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-        </svg>
-      )
+      title: "Tagalog Service",
+      time: "Sunday 8:00 AM - 9:15 AM",
+      description: "Our Filipino language service catering to our Tagalog-speaking congregation.",
+      image: "/Pictures/MainHall.jpg"
     },
     {
-      title: "Bible Study",
-      time: "Wednesday 7:00 PM",
-      description: "Dive deeper into God's word with our weekly Bible study sessions for all ages.",
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-        </svg>
-      )
+      title: "Main Service",
+      time: "Sunday 10:00 AM - 12:00 PM",
+      description: "Our main worship service with contemporary worship and powerful biblical teaching.",
+      image: "/Pictures/MainService.jpg"
     },
     {
-      title: "Youth Ministry",
-      time: "Friday 6:30 PM",
-      description: "A dynamic program for teenagers to grow in faith, build friendships, and have fun.",
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-      )
-    },
-    {
-      title: "Children's Ministry",
-      time: "Sunday 9:00 AM & 11:00 AM",
-      description: "Age-appropriate programs that help children learn about God's love in a fun environment.",
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      )
-    },
-    {
-      title: "Prayer Meeting",
-      time: "Tuesday 6:00 PM",
-      description: "Come together in prayer for our community, church, and personal needs.",
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-        </svg>
-      )
-    },
-    {
-      title: "Community Outreach",
-      time: "Saturday 10:00 AM",
-      description: "Serve our community through various outreach programs and volunteer opportunities.",
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9m0 9c-5 0-9-4-9-9s4-9 9-9" />
-        </svg>
-      )
+      title: "Afternoon Service",
+      time: "Sunday 3:00 PM - 5:00 PM",
+      description: "An additional service time perfect for those who prefer afternoon worship.",
+      image: "/Pictures/MainService.jpg"
     }
-  ]
+  ];
+
+  const prayerGatherings = [
+    {
+      title: "Powerhouse Wednesday",
+      time: "Wednesday 7:00 PM",
+      description: "Our main onsite prayer gathering. Come experience powerful corporate prayer and worship.",
+      image: "/Pictures/Powerhouse.jpg",
+      isOnsite: true,
+      location: "Main Sanctuary"
+    },
+    {
+      title: "Morning Prayer",
+      time: "Tuesday, Thursday, Saturday 6:15 AM",
+      description: "Start your day with prayer in our online morning prayer gatherings.",
+      image: "/Pictures/MorningPrayer.jpg",
+      isOnsite: false,
+      link: "https://zoom.us/j/yourchurchzoomlink",
+      platform: "Zoom"
+    }
+  ];
 
   return (
-    <section id="services" className="py-16 bg-gradient-to-b from-white to-primary-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-primary-800 sm:text-4xl">
-            Our Services
-          </h2>
-          <p className="mt-4 text-lg leading-6 text-primary-600">
-            Join us in worship and fellowship throughout the week.
+    <div className="relative min-h-screen">
+      {/* Hero Section with Title */}
+            <section className="relative h-[60vh] flex items-center justify-center">
+        <div className="absolute inset-0 w-full h-full">
+          <img
+            src="/Pictures/MainHall.jpg"
+            alt="Church Main Hall"
+            className="object-cover w-full h-full"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/90"></div>
+        </div>
+        <div className="relative z-10 text-center">
+          <h1 className="mb-6 font-bold text-white text-7xl">
+            Join Our Services
+          </h1>
+          <p className="max-w-3xl px-4 mx-auto text-2xl text-gray-300">
+            Experience the presence of God through our various services and prayer gatherings
           </p>
         </div>
+      </section>
 
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="relative p-8 bg-white border-2 border-primary-200 rounded-lg hover:border-primary-400 hover:shadow-xl transition-all transform hover:-translate-y-1"
-            >
-              <div className="flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-primary-100 text-primary-600">
-                {service.icon}
-              </div>
-              <h3 className="text-xl font-semibold text-primary-800 mb-2">{service.title}</h3>
-              <p className="text-primary-600 font-medium mb-2">{service.time}</p>
-              <p className="text-primary-600">{service.description}</p>
-            </div>
-          ))}
-        </div>
+      {/* Sunday Services Title */}
+      <div className="relative py-24 text-center bg-gradient-to-b from-gray-900 to-black">
+        <h2 className="mb-8 text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-200">
+          Sunday Services
+        </h2>
+        <p className="max-w-3xl px-4 mx-auto text-xl text-gray-400">
+          Join us every Sunday for powerful worship and life-changing messages
+        </p>
       </div>
-    </section>
+
+      {/* Sunday Services Sections */}
+      {sundayServices.map((service, index) => (
+        <section
+          key={index}
+          className="service-section relative min-h-[100vh] w-full flex items-center justify-center first:pt-24"
+        >
+          {/* Full screen background image */}
+          <div className="absolute inset-0 w-full h-full">
+            <img
+              src={service.image}
+              alt={service.title}
+              className="object-cover w-full h-full"
+            />
+            {/* Gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80"></div>
+          </div>
+
+          {/* Content */}
+          <div className="relative z-10 px-6 py-24 mx-auto max-w-7xl">
+            <div className="transition-all duration-1000 ease-out translate-y-8 opacity-0 content-wrapper">
+              <div className="relative max-w-3xl">
+                <h3 className="mb-6 font-bold tracking-tight text-white text-7xl">
+                  {service.title}
+                </h3>
+                <div className="space-y-6">
+                  <div className="inline-flex items-center">
+                    <svg className="w-6 h-6 mr-3 text-primary-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span className="text-xl text-primary-300">{service.time}</span>
+                  </div>
+                  <p className="max-w-2xl text-lg leading-relaxed text-gray-400">
+                    {service.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      ))}
+
+      {/* Prayer Gatherings Title */}
+      <div className="relative py-24 text-center bg-gradient-to-b from-black to-gray-900">
+        <h2 className="mb-8 text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-200">
+          Prayer Gatherings
+        </h2>
+        <p className="max-w-3xl px-4 mx-auto text-xl text-gray-400">
+          Join our community in powerful prayer meetings throughout the week
+        </p>
+      </div>
+
+      {/* Prayer Gatherings Sections */}
+      {prayerGatherings.map((gathering, index) => (
+        <section
+          key={index}
+          className="service-section relative min-h-[100vh] w-full flex items-center justify-center"
+        >
+          {/* Full screen background image */}
+          <div className="absolute inset-0 w-full h-full">
+            <img
+              src={gathering.image}
+              alt={gathering.title}
+              className="object-cover w-full h-full"
+            />
+            {/* Gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/80"></div>
+          </div>
+
+          {/* Content */}
+          <div className="relative z-10 px-6 py-24 mx-auto max-w-7xl">
+            <div className="transition-all duration-1000 ease-out translate-y-8 opacity-0 content-wrapper">
+              <div className="relative max-w-3xl mx-auto">
+                <div className="mb-6">
+                  <h3 className="mb-4 font-bold tracking-tight text-white text-7xl">
+                    {gathering.title}
+                  </h3>
+                  <span className={`inline-flex items-center px-4 py-1.5 text-sm font-medium rounded-full ${
+                    gathering.isOnsite 
+                      ? 'bg-emerald-950/30 text-emerald-300 border border-emerald-700/30'
+                      : 'bg-blue-950/30 text-blue-300 border border-blue-700/30'
+                  }`}>
+                    <span className={`mr-2 w-1.5 h-1.5 rounded-full ${
+                      gathering.isOnsite ? 'bg-emerald-400' : 'bg-blue-400'
+                    }`}></span>
+                    {gathering.isOnsite ? 'Onsite' : 'Online'}
+                  </span>
+                </div>
+                <div className="space-y-6">
+                  <div className="inline-flex items-center">
+                    <svg className="w-5 h-5 mr-3 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span className="text-xl text-primary-200">{gathering.time}</span>
+                  </div>
+                  <p className="max-w-2xl text-xl leading-relaxed text-gray-300">
+                    {gathering.description}
+                  </p>
+                  {gathering.location && (
+                    <div className="flex items-center gap-3">
+                      <svg className="w-5 h-5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                      <span className="text-xl text-gray-300">{gathering.location}</span>
+                    </div>
+                  )}
+                  {gathering.link && (
+                    <a
+                      href={gathering.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-6 py-3 text-sm font-medium text-white transition-all duration-300 ease-out rounded-lg bg-primary-600 hover:bg-primary-500"
+                    >
+                      Join via {gathering.platform}
+                      <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      ))}
+    </div>
   );
 };
 

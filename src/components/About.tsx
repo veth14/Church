@@ -1,19 +1,19 @@
 const About = () => {
   return (
     <section id="about" className="py-16 bg-gradient-to-b from-primary-50 to-primary-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">About Our Church</h2>
-          <p className="text-lg text-primary-700 max-w-3xl mx-auto">
+      <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div className="mb-12 text-center">
+          <h2 className="mb-4 text-3xl font-bold md:text-4xl text-primary-900">About Our Church</h2>
+          <p className="max-w-3xl mx-auto text-lg text-primary-700">
             Light of the World - North Caloocan is a beacon of hope and faith in our community, 
             dedicated to spreading God's love and serving as a guiding light to others.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
           <div>
-            <h3 className="text-2xl font-bold text-primary-800 mb-6">Our Mission</h3>
-            <p className="text-primary-700 mb-6">
+            <h3 className="mb-6 text-2xl font-bold text-primary-800">Our Mission</h3>
+            <p className="mb-6 text-primary-700">
               We are committed to creating a welcoming environment where people can encounter God, 
               grow in their faith, and discover their purpose. Our mission is to shine God's light and love, 
               and serve our community with the heart of Christ.
@@ -22,7 +22,7 @@ const About = () => {
             <div className="space-y-4">
               <div className="flex items-start">
                 <div className="flex-shrink-0">
-                  <div className="w-6 h-6 bg-primary-600 rounded-full flex items-center justify-center">
+                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-primary-600">
                     <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
@@ -36,7 +36,7 @@ const About = () => {
               
               <div className="flex items-start">
                 <div className="flex-shrink-0">
-                  <div className="w-6 h-6 bg-primary-600 rounded-full flex items-center justify-center">
+                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-primary-600">
                     <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
@@ -50,7 +50,7 @@ const About = () => {
               
               <div className="flex items-start">
                 <div className="flex-shrink-0">
-                  <div className="w-6 h-6 bg-primary-600 rounded-full flex items-center justify-center">
+                  <div className="flex items-center justify-center w-6 h-6 rounded-full bg-primary-600">
                     <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
@@ -64,22 +64,22 @@ const About = () => {
             </div>
           </div>
 
-          <div className="bg-white p-8 rounded-lg shadow-lg">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Values</h3>
+          <div className="p-8 bg-white rounded-lg shadow-lg">
+            <h3 className="mb-6 text-2xl font-bold text-gray-900">Our Values</h3>
             <div className="space-y-4">
-              <div className="border-l-4 border-primary-600 pl-4">
+              <div className="pl-4 border-l-4 border-primary-600">
                 <h4 className="font-semibold text-gray-900">Faith</h4>
                 <p className="text-gray-600">Trusting in God's promises and living by His word</p>
               </div>
-              <div className="border-l-4 border-secondary-500 pl-4">
+              <div className="pl-4 border-l-4 border-secondary-500">
                 <h4 className="font-semibold text-gray-900">Hope</h4>
                 <p className="text-gray-600">Finding strength and encouragement in Christ</p>
               </div>
-              <div className="border-l-4 border-primary-600 pl-4">
+              <div className="pl-4 border-l-4 border-primary-600">
                 <h4 className="font-semibold text-gray-900">Love</h4>
                 <p className="text-gray-600">Showing compassion and kindness to all people</p>
               </div>
-              <div className="border-l-4 border-secondary-500 pl-4">
+              <div className="pl-4 border-l-4 border-secondary-500">
                 <h4 className="font-semibold text-gray-900">Service</h4>
                 <p className="text-gray-600">Using our gifts to serve God and others</p>
               </div>
