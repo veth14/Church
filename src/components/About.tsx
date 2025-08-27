@@ -2,22 +2,22 @@ import React from 'react'
 
 const About = () => {
   return (
-    <section id="about" className="py-16 bg-gray-50">
+    <section id="about" className="py-16 bg-gradient-to-b from-primary-50 to-primary-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About Our Church</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            For over 50 years, Grace Community Church has been a beacon of hope and faith in our community, 
-            dedicated to spreading God's love and serving others.
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-900 mb-4">About Our Church</h2>
+          <p className="text-lg text-primary-700 max-w-3xl mx-auto">
+            Light of the World - North Caloocan is a beacon of hope and faith in our community, 
+            dedicated to spreading God's love and serving as a guiding light to others.
           </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Our Mission</h3>
-            <p className="text-gray-600 mb-6">
+            <h3 className="text-2xl font-bold text-primary-800 mb-6">Our Mission</h3>
+            <p className="text-primary-700 mb-6">
               We are committed to creating a welcoming environment where people can encounter God, 
-              grow in their faith, and discover their purpose. Our mission is to love God, love people, 
+              grow in their faith, and discover their purpose. Our mission is to shine God's light and love, 
               and serve our community with the heart of Christ.
             </p>
             

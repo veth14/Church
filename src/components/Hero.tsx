@@ -1,49 +1,96 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 
-const Hero = () => {
+const Hero: React.FC = () => {
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollPosition(window.scrollY);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <section id="home" className="relative bg-gradient-to-r from-primary-600 to-primary-800 text-white pt-20">
-      <div className="absolute inset-0 bg-black opacity-20"></div>
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-        <div className="text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Welcome to Grace Community Church
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            A place where faith, hope, and love come together. Join our community as we grow in God's grace and serve others with compassion.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-secondary-500 hover:bg-secondary-600 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors">
-              Join Us This Sunday
-            </button>
-            <button className="border-2 border-white text-white hover:bg-white hover:text-primary-700 px-8 py-3 rounded-lg text-lg font-semibold transition-colors">
-              Learn More
-            </button>
-          </div>
-        </div>
+    <section id="home" className="relative h-screen overflow-hidden">
+      {/* Video Background */}
+      <div className="absolute inset-0 w-full h-full">
+        <div className="absolute inset-0 z-10 bg-black opacity-40" />
+        <video
+          className="absolute inset-0 object-cover w-full h-full"
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{
+            transform: `translateY(${scrollPosition * 0.5}px)`,
+          }}
+        >
+          <source src="/Videos/LandingPageVideo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
-      
-      {/* Service Times */}
-      <div className="relative bg-white text-gray-800 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
-              <h3 className="text-lg font-semibold text-primary-700 mb-2">Sunday Worship</h3>
-              <p className="text-gray-600">9:00 AM & 11:00 AM</p>
+
+      {/* Content */}
+      <div className="relative flex items-center justify-center h-full">
+        <div 
+          className="max-w-4xl px-4 mx-auto text-center sm:px-6 lg:px-8"
+          style={{
+            transform: `translateY(${scrollPosition * 0.2}px)`,
+          }}
+        >
+          <div className="relative z-20">
+            <h1 className="flex flex-col items-center space-y-6">
+              <span className="text-base tracking-[0.5em] uppercase text-[#FBD719] font-['Champion-Light'] opacity-90 hover:opacity-100 transition-opacity">
+                WELCOME TO
+              </span>
+              <span 
+                className="text-5xl md:text-7xl text-white tracking-wide font-['Champion-Light'] uppercase relative group"
+              >
+                <span className="relative z-10">LIGHT OF THE WORLD</span>
+                <span className="absolute inset-0 z-0 text-[#FBD719] blur-sm opacity-50 transform group-hover:blur-md group-hover:opacity-70 transition-all duration-500">
+                  LIGHT OF THE WORLD
+                </span>
+              </span>
+              <span className="text-lg md:text-xl tracking-[0.2em] text-white/80 font-['Champion-Light'] uppercase hover:text-[#FBD719] transition-colors duration-300">
+                NORTH CALOOCAN
+              </span>
+            </h1>
+            <p className="font-['Figtree'] text-base md:text-lg mt-12 text-white/70 max-w-2xl mx-auto font-light">
+              Where faith illuminates hearts and transforms lives.
+            </p>
+            <div className="flex items-center justify-center gap-8 mt-12">
+              <a
+                href="#services"
+                className="relative px-8 py-3 overflow-hidden text-sm group"
+              >
+                <span className="relative z-10 font-['Figtree'] text-black font-medium">
+                  Join Us This Sunday
+                </span>
+                <div className="absolute inset-0 bg-[#FBD719] transform transition-transform duration-300 group-hover:scale-x-110"></div>
+              </a>
+              <a
+                href="#about"
+                className="relative px-8 py-3 overflow-hidden text-sm group"
+              >
+                <span className="relative z-10 font-['Figtree'] text-white font-medium">
+                  Learn More
+                </span>
+                <div className="absolute inset-0 border border-[#FBD719] opacity-50 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-[#FBD719] transform origin-left transition-transform duration-300 scale-x-0 group-hover:scale-x-100"></div>
+              </a>
             </div>
-            <div>
-              <h3 className="text-lg font-semibold text-primary-700 mb-2">Bible Study</h3>
-              <p className="text-gray-600">Wednesday 7:00 PM</p>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-primary-700 mb-2">Youth Group</h3>
-              <p className="text-gray-600">Friday 6:30 PM</p>
-            </div>
+          </div>
+
+          {/* Scroll Indicator */}
+          <div className="absolute flex flex-col items-center transform -translate-x-1/2 bottom-8 left-1/2 animate-bounce">
+            <div className="w-[1px] h-8 bg-gradient-to-b from-[#FBD719] to-transparent"></div>
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

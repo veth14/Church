@@ -6,29 +6,59 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        serif: ['Merriweather', 'serif'],
+      },
+      animation: {
+        'fade-in': 'fadeIn 1s ease-in forwards',
+        'scroll': 'scroll 2s ease-in-out infinite',
+        'bounce': 'bounce 2s infinite',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        scroll: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(8px)' },
+        },
+      },
       colors: {
+        church: {
+          yellow: '#FBD719',  // Church Yellow
+          gray: '#6B7280',    // Gray
+          black: '#1F2937',   // Rich Black
+          white: '#FFFFFF',   // Pure White
+        },
         primary: {
-          50: '#f0f9ff',
-          100: '#e0f2fe',
-          200: '#bae6fd',
-          300: '#7dd3fc',
-          400: '#38bdf8',
-          500: '#0ea5e9',
-          600: '#0284c7',
-          700: '#0369a1',
-          800: '#075985',
-          900: '#0c4a6e',
+          DEFAULT: '#FBD719', // Church Yellow
+          light: '#FDE68A',   // Light Yellow
+          dark: '#D6B517',    // Darker Yellow
         },
         secondary: {
-          50: '#fefce8',
-          100: '#fef9c3',
-          200: '#fef08a',
-          300: '#fde047',
-          400: '#facc15',
-          500: '#eab308',
-          600: '#ca8a04',
-          700: '#a16207',
-          800: '#854d0e',
+          DEFAULT: '#6B7280', // Gray
+          light: '#9CA3AF',   // Light Gray
+          dark: '#4B5563',    // Dark Gray
+        },
+        accent: {
+          DEFAULT: '#1F2937', // Black
+          light: '#374151',   // Light Black
+          dark: '#111827',    // Darker Black
+        },
+        accent: {
+          50: '#fef2f2',  // Light Red
+          100: '#fee2e2', // Lighter Red
+          200: '#fecaca', // Light Warm
+          300: '#fca5a5', // Warm
+          400: '#f87171', // Primary Warm
+          500: '#ef4444', // Deep Warm
+          600: '#dc2626', // Darker Warm
+          700: '#b91c1c', // Dark Warm
+          800: '#991b1b', // Very Dark Warm
+          900: '#7f1d1d', // Darkest Warm
+        },
           900: '#713f12',
         }
       },
