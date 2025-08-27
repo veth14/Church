@@ -1,13 +1,15 @@
-import React from 'react';
+import { type FC } from 'react';
 
-const Footer: React.FC = () => {
+const Footer: FC = () => {
   return (
-    <footer className="py-8 text-white bg-gray-800">
-      <div className="container px-4 mx-auto">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+    <footer className="bg-gray-900 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Church Info */}
           <div>
-            <h3 className="mb-4 text-xl font-semibold">Light of the World - North Caloocan</h3>
-            <p className="text-gray-300">A place of worship, fellowship, and community.</p>
+            <h3 className="text-xl font-semibold mb-4">Light of the World</h3>
+            <p className="text-gray-400 mb-2">North Caloocan</p>
+            <p className="text-gray-400 mb-4">Where faith meets community</p>
           </div>
           <div>
             <h3 className="mb-4 text-xl font-semibold">Quick Links</h3>
