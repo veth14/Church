@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200">
+  <style>
+    text {
+      font-family: Arial Black, sans-serif;
+      font-weight: 900;
+      fill: #000000;
+    }
+  </style>
+  <text x="50" y="150" style="font-size: 120px; transform: skewX(-15deg);">LIGHT YOUTH</text>
+</svg>

@@ -5,6 +5,127 @@
   text-align: center;
 }
 
+/* Campus Carousel Styles */
+.campus-carousel .slick-slide {
+  padding: 0.5rem;
+  opacity: 0.5;
+  transition: all 0.5s ease;
+  transform: scale(0.95);
+}
+
+.campus-carousel .slick-current {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.campus-carousel .slick-slide:not(.slick-current) .group:hover {
+  transform: scale(1.05) translateY(-8px);
+}
+
+/* Dim adjacent slides when one is hovered */
+.campus-carousel:hover .slick-slide {
+  opacity: 0.3;
+  transform: scale(0.9);
+  filter: blur(1px);
+  transition: all 0.5s ease;
+}
+
+.campus-carousel .slick-slide:hover {
+  opacity: 1 !important;
+  transform: scale(1.1) translateY(-16px) !important;
+  filter: blur(0) !important;
+  z-index: 10;
+}
+
+.campus-carousel {
+  position: relative;
+  padding-bottom: 60px;
+}
+
+.campus-carousel .dots-custom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.campus-carousel .dots-custom li {
+  display: inline-block;
+  margin: 0 4px;
+  padding: 0;
+}
+
+.campus-carousel .dots-custom li button {
+  display: block;
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  text-indent: -9999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.campus-carousel .dots-custom li.slick-active button {
+  background-color: white;
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.campus-carousel .slick-prev,
+.campus-carousel .slick-next {
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  transition: all 0.3s ease;
+}
+
+.campus-carousel .slick-prev {
+  left: -2rem;
+}
+
+.campus-carousel .slick-next {
+  right: -2rem;
+}
+
+.campus-carousel .slick-prev:before,
+.campus-carousel .slick-next:before {
+  font-size: 50px;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.campus-carousel .slick-prev:hover:before,
+.campus-carousel .slick-next:hover:before {
+  opacity: 1;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
